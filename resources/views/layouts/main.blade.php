@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@yield('title')</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- my css for all pages, including bootstrap -->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}" />
+
+	
+	@yield('links-in-head')
+
+
+</head>
+
+<body class="animsition">
+    <div class="nav-overlay "></div>
+    <nav class="nav-collapse">
+        <div class="nav-collapse-toggler">
+            <svg class="nav__icon-cross"><use xlink:href="{{asset('icon/sprite.svg#icon-cross')}}"></use></svg>   
+        </div>
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#">
+                    <svg class="nav__icon-home"><use xlink:href="{{asset('icon/sprite.svg#icon-home')}}"></use></svg>   
+                    home page
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="#">
+                    <svg class="nav__icon-search"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>   
+                    search page
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="#">
+                    <svg class="nav__icon-chat"><use xlink:href="{{asset('icon/sprite.svg#icon-bubbles')}}"></use></svg>   
+                    chat page
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="#">
+                    <svg class="nav__icon-profile"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>   
+                    profile page
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav class="nav">
+        <div class="nav-box--left">
+            <a href="/">Home</a>
+            <a href="/">Search</a>
+            <a href="/">Chat</a>
+        </div>
+        <div class="nav-box--center">
+            <span>JoinMe</span> 
+            <img src="{{asset('img/JoinMe.png')}}" alt="JoinMe Logo">
+        </div>
+        <div class="nav-box--right">
+            <button id="menu" class="btn">Menu</button>
+        </div>
+        
+    </nav>
+    
+
+    
+    
+    
+    @yield('content')
+
+
+    @yield('js')
+    {{-- my js for bootstrap --}}
+    <script src="{{asset('js/app.js')}}"></script>
+
+    
+
+    <script>
+        
+        $('#menu').click(function() {
+            $('.nav-overlay').css('display', 'block');
+            $('.nav-overlay').animate({opacity: 1}, 'fast', function() {
+                $('.nav-collapse').animate({width: "+=100vw", opacity: 1}, 'fast');
+                
+            });
+        });
+
+        $('.nav-collapse-toggler').click(() => {
+            $('.nav-overlay').animate({opacity: 0}, 0, function() {
+                $('.nav-collapse').animate({width: "-=100vw", opacity: 0}, 0);
+            });
+            $('.nav-overlay').css('display', 'none');
+        });
+        
+
+    </script>
+</body>
+
+</html>

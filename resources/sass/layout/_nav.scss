@@ -1,0 +1,172 @@
+.nav {
+    height: $height-nav;
+    background-color: $color-white;
+    font-size: $font-nav;
+    align-items: center;
+    color: black;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    .nav-box--left {
+        margin-left: 2rem;
+        
+        :not(:first-child) {
+            margin-left: 2.8rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+
+            @media only screen and (max-width: 40.625em) { //650px
+                display: none;
+                
+            };
+        }
+    }
+
+
+    .nav-box--center {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        img {
+            width: calc(1.2 * #{$font-nav});
+            height: calc(1.2 * #{$font-nav});
+            margin-left: 1rem;
+        }
+    }
+
+    > * {
+        flex: 0 0 33%;
+    }
+
+
+}
+
+.nav-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    display: none;
+    z-index: 1000;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    
+    
+}
+
+.nav-collapse {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500; 
+    
+
+    opacity: 0;
+    width: 0;
+    
+
+    .nav-collapse-toggler {
+        position: absolute;
+        right: 3.5rem;
+        top: 3.5rem;
+        width: 3rem;
+        height: 3rem;
+        z-index: 1500;
+
+        svg {
+            fill: $color-white;
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-.5rem);
+                
+            }
+        }
+    }
+
+    .nav__list {
+        @include absCenter;
+        text-align: center;
+        width: 100%;
+
+        .nav__item {
+            margin: 1rem;
+
+            a {
+                display: flex;
+                align-items: center;
+                &:link, 
+                &:visited {
+                    display: inline-block;
+                    font-size: 3rem;
+                    font-weight: 300;
+                    padding: 2rem 2rem;
+                    color: $color-white;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+                    background-size: 220%;
+                    transition: all .4s;
+                    background-position: 0;
+        
+
+                }
+                
+                &:hover,
+                &:active {
+                    background-position: 100%;
+                    color: $color-primary;
+                    transform: translateX(1rem);
+                    transition: all .5s;
+
+                    svg {
+                        stroke: $color-white;
+                        fill: $color-primary;
+                    }
+                }
+
+                svg {
+                    fill: $color-white;
+                    stroke: $color-primary;
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    margin-right: 1.5rem;
+
+                    transition: all .5s;
+                }
+        
+            }
+        }
+    }
+
+
+
+}
+
+
+.nav-box--right {
+    display: flex;
+    justify-content: flex-end;
+    
+    #menu {
+        display: none;
+        margin-right: 2rem;
+        font-size: $font-nav;
+
+        @media only screen and (max-width: 40.625em) { //650px
+            display: block;
+            
+        };
+    }
+}
+
+
+
