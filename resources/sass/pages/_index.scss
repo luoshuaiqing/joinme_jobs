@@ -3,6 +3,14 @@
     height: $height-body;
     min-height: 800px;
 
+    @media only screen and (max-width: 48em) { // 768px
+        min-height: 600px;
+    };
+
+    @include respond(phone) {
+        min-height: 400px;
+    }
+
     .bg-video {
         position: absolute;
         top: 0;
@@ -39,7 +47,7 @@
                 font-size: 2rem;
                 font-weight: 400;
                 transform: translateY(calc(-1 * (1.5em + 1rem + 2px) - 100% - .5rem));
-                transition: all .5s;
+                transition: all .3s;
             }
 
             input {
@@ -181,7 +189,7 @@
         form {
             padding: 4rem 5rem;
             padding-bottom: 6rem;
-            display: none;
+            
         }
 
         .submit {

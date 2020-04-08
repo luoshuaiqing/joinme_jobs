@@ -10967,7 +10967,7 @@ html {
 
 @media only screen and (max-width: 37.5em) {
   html {
-    font-size: 30%;
+    font-size: 35%;
   }
 }
 
@@ -11160,6 +11160,18 @@ body {
   min-height: 800px;
 }
 
+@media only screen and (max-width: 48em) {
+  .index-container {
+    min-height: 600px;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .index-container {
+    min-height: 400px;
+  }
+}
+
 .index-container .bg-video {
   position: absolute;
   top: 0;
@@ -11197,7 +11209,7 @@ body {
   font-size: 2rem;
   font-weight: 400;
   transform: translateY(calc(-1 * (1.5em + 1rem + 2px) - 100% - .5rem));
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .index-container form .form-group input {
@@ -11317,7 +11329,6 @@ body {
 .index-container__signup form {
   padding: 4rem 5rem;
   padding-bottom: 6rem;
-  display: none;
 }
 
 .index-container__signup .submit {

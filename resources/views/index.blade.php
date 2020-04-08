@@ -97,27 +97,6 @@
 
 
 @section('js')
-<script>
-	$("video")[0].playbackRate = .3;
-	
-    
-
-    let loginShowed = true;
-    $('.index-toggle-display').click(() => {
-        if (loginShowed) {
-            $(".index-container__login > form").css("display", "none");
-            $(".index-container__signup > form").fadeIn(1000);
-        } else {
-            $(".index-container__signup > form").css("display", "none");
-            $(".index-container__login > form").fadeIn(1000);
-        }
-        loginShowed = !loginShowed;
-	});
-	
-	$('.index-container__signup .btn-send').click(() => {
-		alert('email sent');
-	})
-
-</script>
+<script src="{{asset('js/index.js')}}"></script>
 
 @endsection

@@ -18,7 +18,7 @@ html {
     }
 
     @include respond(phone) {
-        font-size: 30%; //to make 1 rem = 4.8px
+        font-size: 35%; //to make 1 rem = 5.6px
     }
 
     @include respond(big-desktop) {
