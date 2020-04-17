@@ -11,14 +11,12 @@
 
     <!-- my css for all pages, including bootstrap -->
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
-
 	
 	@yield('links-in-head')
 
-
 </head>
 
-<body class="animsition">
+<body>
     <div class="nav-overlay "></div>
     <nav class="nav-collapse">
         <div class="nav-collapse-toggler">
@@ -26,25 +24,19 @@
         </div>
         <ul class="nav__list">
             <li class="nav__item">
-                <a href="#">
-                    <svg class="nav__icon-home"><use xlink:href="{{asset('icon/sprite.svg#icon-home')}}"></use></svg>   
-                    home page
-                </a>
-            </li>
-            <li class="nav__item">
-                <a href="#">
+                <a href="/search">
                     <svg class="nav__icon-search"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>   
                     search page
                 </a>
             </li>
             <li class="nav__item">
-                <a href="#">
+                <a href="/chat">
                     <svg class="nav__icon-chat"><use xlink:href="{{asset('icon/sprite.svg#icon-bubbles')}}"></use></svg>   
                     chat page
                 </a>
             </li>
             <li class="nav__item">
-                <a href="#">
+                <a href="/profile">
                     <svg class="nav__icon-profile"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>   
                     profile page
                 </a>
@@ -54,9 +46,9 @@
 
     <nav class="nav">
         <div class="nav-box--left">
-            <a href="/">Home</a>
-            <a href="/">Search</a>
-            <a href="/">Chat</a>
+            <a href="/search" class="@yield('nav-search') " >Search</a>
+            <a href="/chat" class="@yield('nav-chat') ">Chat</a>
+            <a href="/profile" class="@yield('nav-profile') ">Profile</a>
         </div>
         <div class="nav-box--center">
             <span>JoinMe</span> 

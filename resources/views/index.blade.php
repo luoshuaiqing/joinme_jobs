@@ -1,16 +1,16 @@
-@extends('layouts.main')
+@extends('layouts.logout')
 @section('title', 'Welcom to JoinMe')
 
 {{-- for sending email --}}
 @section('links-in-head')
 <script src='https://smtpjs.com/v3/smtp.js'></script>
+
 @endsection
 
 
-{{-- @section('nav-home-active', 'active')
-@section('nav-search-active', 'text-muted ')
-@section('nav-chat-active', 'text-muted ') --}}
-
+@section('nav-home', 'active')
+@section('nav-search', 'text-muted')
+@section('nav-chat', 'text-muted')
 
 @section('content')
 
@@ -18,8 +18,6 @@
 
     <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
-            {{-- <source src="{{asset('video/index_bg_video.mp4')}}" type="video/mp4">
-			<source src="{{asset('video/index_bg_video.webm')}}" type="video/mp4"> --}}
 			<source src="{{asset('video/video1.mp4')}}" type="video/mp4">
             Your browser is not supported!
         </video>
@@ -27,7 +25,8 @@
 
     <div class="row h-100">
         <div class="col-md-6 col-12 index-container__login ">
-            <form action="">
+            <form action="#" method="POST" id="login-form">
+                @csrf
                 <header class="header w-100">
                     Account Login
                 </header>
@@ -48,41 +47,45 @@
                     </div>
                 </div>
 
-                <a href="#" class="submit">Login</a>
+                <a href="#" class="submit submit-login">Login</a>
 
             </form>
         </div>
+
+
         <div class="col-md-6 col-12 index-container__signup">
-            <form action="">
+            <form action="#" method="POST" id="signup-form">
+                @csrf
                 <header class="header w-100">
                     Account Signup
                 </header>
                 <div class="form-group">
                     <input type="email" class="form-control form-control-lg" id="signup-email"
-                        placeholder="Email Address" required>
+                        placeholder="Email Address" name="email" required>
                     <label for="signup-email">Email Address</label>
                 </div>
 
                 <div class="form-group">
                     <input type="password" class="form-control form-control-lg" id="signup-password"
-                        placeholder="Password" required>
+                        placeholder="Password" name="password" required>
                     <label for="signup-password">Password </label>
 
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="verification-code"
+                    <input type="text" class="form-control form-control-lg" id="verification-code" name="verification-code"
                         placeholder="Verification Code" required>
                     <div class="btn-send">send</div>
-                    <label for="verification-code">Verification Code </label>
+                    <label for="verification-code">Verification Code</label>
                     <div class="error-box">
-                        <span class="error text-red" id="signup__error">Please enter the correct verification
-                            code</span>
-                        <a href="#" class="index-toggle-display">Log In?</a>
+
+                        <span class="error text-red" id="signup__error">{{$errors->first()}}</span>
+
+                        <a href="#" class="index-toggle-display" >Log In?</a>
                     </div>
                 </div>
 
-                <a href="#" class="submit">Sign Up</a>
+                <a href="#" class="submit submit-signup" type="submit">Sign Up</a>
 
             </form>
         </div>

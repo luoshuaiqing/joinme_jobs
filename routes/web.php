@@ -17,4 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/test', 'loginController@test');
+Route::get('/test', 'authController@test');
+
+
+Route::post('/signup', 'authController@signup');
+
+Route::get('/profile', 'profileController@show_profile');
+
