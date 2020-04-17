@@ -1,29 +1,4 @@
-// $(document).ready(function() {
-//     $(".animsition").animsition({
-//         inClass: 'fade-in-right',
-//         outClass: 'fade-out-right',
-//         inDuration: 1500,
-//         outDuration: 800,
-//         linkElement: '.animsition-link',
-//         // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-//         loading: true,
-//         loadingParentElement: 'body', //animsition wrapper element
-//         loadingClass: 'animsition-loading',
-//         loadingInner: '', // e.g '<img src="loading.svg" />'
-//         timeout: false,
-//         timeoutCountdown: 5000,
-//         onLoadEvent: true,
-//         browser: ['animation-duration', '-webkit-animation-duration'],
-//         // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-//         // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-//         overlay: false,
-//         overlayClass: 'animsition-overlay-slide',
-//         overlayParentElement: 'body',
-//         transition: function(url) {
-//             window.location.href = url;
-//         }
-//     });
-// });
+
 
 $("video")[0].playbackRate = .3;
 
@@ -64,48 +39,63 @@ $('.index-toggle-display').click((e) => {
 
 $('.index-container__signup .btn-send').click(() => {
     alert('email sent');
+    alert('the verification code is \'joinmenow\'');
 })
 
 
 $('.submit.submit-signup').click(() => {
     event.preventDefault();
-
-});
-
-
-// only use ajax for signup
-$('.submit.submit-login').click(() => {
-    event.preventDefault();
-
-
-    $(".button__verify").click(function() {
-        alert("Please check your email to see the verification code");
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', "backend/auth.php", true);
-        xhr.setRequestHeader('Content-type', "application/json");
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log(xhr.responseText);
-                // var json = JSON.parse(xhr.responseText);
-                // console.log(json);
-            }
-        };
-
-        let email = $('#signup-email').val();
-        let password = $('#password').val();
-        let verificationCode = $('#verification-code').val();
-
-        let data = {
-            "email": email,
-            "password": password,
-            "verification-code": verificationCode
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-        xhr.send(data);
-
-        
-
     });
 
+    let asEmployee = 1;
+    if($(this).hasClass('as-employer')) {
+        asEmployee = 0;
+    }
+
+    $.ajax({
+        type:'POST',
+        url:'/signup',
+        data: {
+            email: $('#signup-email').val(),
+            password: $('#signup-password').val(),
+            verificationCode: $('#verification-code').val(),
+            asEmployee: asEmployee
+        },
+        success: signupSuccess,
+        error: function(data) {
+            // if the error is caused by the validation
+            if(data.status === 422) {
+                let { errors } = data.responseJSON;
+                let { email, password, verificationCode } = errors;
+
+                if(email) {
+                    $('#signup__error').html(email[0]);
+                }
+                else if(password){
+                    $('#signup__error').html(password[0]);
+                }
+                else if(verificationCode) {
+                    $('#signup__error').html(verificationCode[0]);
+                }
+            }
+            else {
+                console.log(data);
+            }
+        }
+     });
+
 });
 
+$('.submit.submit-login').click(() => {
+    event.preventDefault();
+    $('#login-form').submit();
+});
+
+function signupSuccess(data) {
+    console.log('success');
+    window.location.href = '/profile';
+}

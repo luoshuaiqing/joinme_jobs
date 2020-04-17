@@ -11056,6 +11056,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1500;
+  display: none;
   opacity: 0;
   width: 0;
 }
@@ -11243,10 +11244,6 @@ body {
   width: 100%;
 }
 
-.index-container form .form-group .error-box .error {
-  visibility: hidden;
-}
-
 .index-container .header {
   font-size: 4.5rem;
   text-transform: uppercase;
@@ -11370,5 +11367,49 @@ body {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-color: white;
+}
+
+.index-container__signup .signup-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-container__signup .signup-btn-container > * {
+  width: 15rem !important;
+}
+
+.profile-container {
+  position: relative;
+  height: calc(100vh - 8rem);
+}
+
+.profile-container .edit-profile-container .header-container {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-container .edit-profile-container .header-container h1 {
+  margin-right: auto;
+}
+
+.profile-container .edit-profile-container .header-container button:nth-child(2) {
+  margin-right: 2rem;
+}
+
+.profile-container .edit-profile-container label {
+  font-size: 1.5rem;
+}
+
+.profile-container .edit-profile-container .form-group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.body-profile {
+  background-image: url(/images/profile_bg.jpeg?58216fdc423e059e078b9a7752cd3112);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 35% 0;
 }
 

@@ -11,34 +11,40 @@
 
     <!-- my css for all pages, including bootstrap -->
     <link rel="stylesheet" href="{{asset('css/main.css')}}" />
-	
+
 	@yield('links-in-head')
 
 </head>
 
-<body>
+<body class="@yield('body-class')">
     <div class="nav-overlay "></div>
     <nav class="nav-collapse">
         <div class="nav-collapse-toggler">
-            <svg class="nav__icon-cross"><use xlink:href="{{asset('icon/sprite.svg#icon-cross')}}"></use></svg>   
+            <svg class="nav__icon-cross"><use xlink:href="{{asset('icon/sprite.svg#icon-cross')}}"></use></svg>
         </div>
         <ul class="nav__list">
             <li class="nav__item">
                 <a href="/search">
-                    <svg class="nav__icon-search"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>   
+                    <svg class="nav__icon-search"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>
                     search page
                 </a>
             </li>
             <li class="nav__item">
                 <a href="/chat">
-                    <svg class="nav__icon-chat"><use xlink:href="{{asset('icon/sprite.svg#icon-bubbles')}}"></use></svg>   
+                    <svg class="nav__icon-chat"><use xlink:href="{{asset('icon/sprite.svg#icon-bubbles')}}"></use></svg>
                     chat page
                 </a>
             </li>
             <li class="nav__item">
                 <a href="/profile">
-                    <svg class="nav__icon-profile"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>   
+                    <svg class="nav__icon-profile"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>
                     profile page
+                </a>
+            </li>
+            <li class="nav__item">
+                <a href="/about">
+                    <svg class="nav__icon-about"><use xlink:href="{{asset('icon/sprite.svg#icon-users')}}"></use></svg>
+                    about page
                 </a>
             </li>
         </ul>
@@ -49,21 +55,22 @@
             <a href="/search" class="@yield('nav-search') " >Search</a>
             <a href="/chat" class="@yield('nav-chat') ">Chat</a>
             <a href="/profile" class="@yield('nav-profile') ">Profile</a>
+            <a href="/about" class="@yield('nav-about') ">About</a>
         </div>
         <div class="nav-box--center">
-            <span>JoinMe</span> 
+            <span>JoinMe</span>
             <img src="{{asset('img/JoinMe.png')}}" alt="JoinMe Logo">
         </div>
         <div class="nav-box--right">
             <button id="menu" class="btn">Menu</button>
         </div>
-        
-    </nav>
-    
 
-    
-    
-    
+    </nav>
+
+
+
+
+
     @yield('content')
 
 
@@ -71,15 +78,15 @@
     {{-- my js for bootstrap --}}
     <script src="{{asset('js/app.js')}}"></script>
 
-    
+
 
     <script>
-        
+
         $('#menu').click(function() {
             $('.nav-overlay').css('display', 'block');
             $('.nav-overlay').animate({opacity: 1}, 'fast', function() {
                 $('.nav-collapse').animate({width: "+=100vw", opacity: 1}, 'fast');
-                
+
             });
         });
 
@@ -89,7 +96,10 @@
             });
             $('.nav-overlay').css('display', 'none');
         });
-        
+
+        $('#menu').click(() => {
+            $('.nav-collapse').show();
+        });
 
     </script>
 </body>

@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('/test', 'authController@test');
 
-
+Route::post('/login', 'authController@login');
 Route::post('/signup', 'authController@signup');
 
-Route::get('/profile', 'profileController@show_profile');
+Route::get('/profile', 'profileController@show_profile')->name('profile');
 

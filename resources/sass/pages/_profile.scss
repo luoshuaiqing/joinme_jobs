@@ -1,0 +1,43 @@
+.profile-container {
+    position: relative;
+    height: $height-body;
+
+
+    .edit-profile-container {
+        // @include absCenter;
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            padding-top: 2rem;
+            margin-bottom: 1.5rem;
+
+            h1 {
+                margin-right: auto;
+            }
+
+            button:nth-child(2) {
+                margin-right: 2rem;
+            }
+        }
+
+        label {
+            font-size: 1.5rem;
+        }
+
+        .form-group:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+
+    }
+}
+
+
+.body-profile {
+    background-image: url("../../../public/img/profile_bg.jpeg");
+    background-repeat: no-repeat;
+	background-size: 100% 100%;
+    background-position: 35% 0;
+
+}
+
