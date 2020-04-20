@@ -19,7 +19,10 @@
 
 
 <div class="profile-container container">
-    <form action="/profile" method="POST" class="container-fluid edit-profile-container">
+    <img src="{{$photoUrl}}" alt="user photo">
+
+
+    <form action="/profile" method="POST" class="container-fluid edit-profile-container" enctype="multipart/form-data">
         @csrf
         @if(session('signupSuccess'))
             <h3 class="text-success mt-3">{{session('signupSuccess')}}</h3>
@@ -32,15 +35,15 @@
 
         <div class="form-group ">
             <label for="firstName">First Name</label>
-            <input class="form-control" type="text" id="firstName" value="{{$firstName}}" required>
+            <input class="form-control" type="text" id="firstName" value="{{$firstName}}" name="firstName" required>
         </div>
         <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input class="form-control" type="text" id="lastName" value="{{$lastName}}" required>
+            <input class="form-control" type="text" id="lastName" value="{{$lastName}}" name="lastName" required>
         </div>
         <div class="form-group">
             <label for="imageUpload">Image Upload</label>
-            <input type="file" class="form-control-file" id="imageUpload">
+            <input type="file" class="form-control-file" id="imageUpload" accept="image/*" name="imageUpload">
         </div>
     </form>
 

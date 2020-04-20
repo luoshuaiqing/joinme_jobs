@@ -23,4 +23,4 @@ Route::post('/login', 'authController@login');
 Route::post('/signup', 'authController@signup');
 
 Route::get('/profile', 'profileController@show_profile')->name('profile');
-
+Route::post('/profile', 'profileController@edit_profile');

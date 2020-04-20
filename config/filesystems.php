@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'public_user_photos'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,6 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'public_user_photos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public_user_photos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -79,6 +86,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('user_photos') => storage_path('app/public_user_photos'),
     ],
 
 ];
