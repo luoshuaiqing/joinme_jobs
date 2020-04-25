@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->name('index');
+})->name('index')->middleware(['checkLogout']);
 
 Route::get('/test', 'authController@test');
 
 Route::post('/login', 'authController@login');
 Route::post('/signup', 'authController@signup');
 
-Route::get('/profile', 'profileController@show_profile')->name('profile');
+Route::get('/profile', 'profileController@show_profile')->name('profile')->middleware(['checkLogin']);
 Route::post('/profile', 'profileController@edit_profile');
+
+Route::get('/logout', 'profileController@logout')->middleware(['checkLogin']);

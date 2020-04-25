@@ -68,7 +68,7 @@ class authController extends Controller
             ]
         ]);
 
-        // // email can not exist in table for student nor tutor
+
         $request->validate([
             'email' => [new NotExistEmail]
         ]);
@@ -81,7 +81,7 @@ class authController extends Controller
         $user->save();
 
         Auth::login($user);
-        $request->session()->flash('signupSuccess', 'Sign Up Success! Please complete your profile information.');
+        $request->session()->flash('success', 'Sign Up Success! Please complete your profile information.');
 
         return response()->json(
             [

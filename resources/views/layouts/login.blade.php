@@ -47,6 +47,12 @@
                     about page
                 </a>
             </li>
+            <li class="nav__item">
+                <a href="/logout">
+                    <svg class="nav__icon-logout"><use xlink:href="{{asset('icon/sprite.svg#icon-cancel-circle')}}"></use></svg>
+                    log out
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -55,14 +61,18 @@
             <a href="/search" class="@yield('nav-search') " >Search</a>
             <a href="/chat" class="@yield('nav-chat') ">Chat</a>
             <a href="/profile" class="@yield('nav-profile') ">Profile</a>
-            <a href="/about" class="@yield('nav-about') ">About</a>
+
         </div>
         <div class="nav-box--center">
             <span>JoinMe</span>
             <img src="{{asset('img/JoinMe.png')}}" alt="JoinMe Logo">
         </div>
         <div class="nav-box--right">
-            <button id="menu" class="btn">Menu</button>
+            <div>
+                <a href="/about" class="@yield('nav-about')" id="about">About</a>
+                <a href="/logout" class="@yield('nav-logout')" id="logout">Log Out</a>
+                <button id="menu" class="btn">Menu</button>
+            </div>
         </div>
 
     </nav>

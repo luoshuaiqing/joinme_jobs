@@ -2,6 +2,12 @@
     position: relative;
     height: $height-body;
 
+    .user-photo {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        margin-top: 3rem;
+    }
 
     .edit-profile-container {
         // @include absCenter;
@@ -22,7 +28,11 @@
         }
 
         label {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        input {
+            font-size: 1.6rem;
         }
 
         .form-group:not(:last-child) {
@@ -34,6 +44,7 @@
 
 
 .body-profile {
+    // background-image: url("../../../public/img/profile_bg.jpeg");
     background-image: url("../../../public/img/profile_bg.jpeg");
     background-repeat: no-repeat;
 	background-size: 100% 100%;
