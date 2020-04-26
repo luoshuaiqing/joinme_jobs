@@ -9,7 +9,6 @@
 
 
 @section('nav-home', 'active')
-@section('nav-search', 'text-muted')
 @section('nav-about', 'text-muted')
 
 @section('content')

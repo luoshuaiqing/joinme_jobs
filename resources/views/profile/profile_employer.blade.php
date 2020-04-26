@@ -82,9 +82,9 @@
         </div>
 
         <div class="form-group">
-            <label for="interestedCareer">Interested Career</label>
-            <input class="form-control" type="text" id="interestedCareer" value="{{old('interestedCareer') ?? $user->interested_career}}" name="interestedCareer">
-            @error('interestedCareer')
+            <label for="companyName">Company Name</label>
+            <input class="form-control" type="text" id="companyName" value="{{old('companyName') ?? $user->company_name}}" name="companyName" required>
+            @error('companyName')
                 <small class="text-danger">{{$message}}</small>
             @enderror
         </div>

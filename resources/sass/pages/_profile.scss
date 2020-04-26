@@ -50,3 +50,18 @@
     background-position: 35% 0;
 }
 
+.about-container {
+    position: relative;
+    height: $height-body;
+
+
+    h1 {
+        margin-top: 3rem;
+    }
+
+    div {
+        font-size: 1.8rem;
+        margin-top: 1rem;
+        line-height: 3.2rem;
+    }
+}

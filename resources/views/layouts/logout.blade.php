@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body class="@yield('body-class')">
     <div class="nav-overlay "></div>
     <nav class="nav-collapse">
         <div class="nav-collapse-toggler">
@@ -31,12 +31,6 @@
                 <a href="/">
                     <svg class="nav__icon-home"><use xlink:href="{{asset('icon/sprite.svg#icon-home')}}"></use></svg>
                     home page
-                </a>
-            </li>
-            <li class="nav__item">
-                <a href="/search">
-                    <svg class="nav__icon-search"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>
-                    search page
                 </a>
             </li>
             <li class="nav__item">
@@ -52,7 +46,6 @@
     <nav class="nav">
         <div class="nav-box--left">
             <a href="/" class="@yield('nav-home')" >Home</a>
-            <a href="/search" class="@yield('nav-search')" >Search</a>
         </div>
         <div class="nav-box--center">
             <span>JoinMe</span>

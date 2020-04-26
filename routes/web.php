@@ -35,3 +35,19 @@ Route::post('/edit_posted_job/{job}', 'jobController@editPostedJob')->middleware
 
 
 Route::get('/search', 'searchController@show')->name('search')->middleware(['checkLogin']);
+Route::get('/searchFor', 'searchController@searchFor')->middleware(['checkLogin']);
+Route::get('/searchForDetail', 'searchController@searchForDetail')->middleware(['checkLogin']);
+
+Route::get('/about', function() {
+    if(Auth::check()) {
+        return view('about_login', [
+            'user' => Auth::user()
+        ]);
+    }
+    else {
+        return view('about_logout');
+    }
+});
+
+
+

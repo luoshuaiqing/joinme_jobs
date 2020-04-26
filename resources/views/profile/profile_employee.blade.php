@@ -1,5 +1,5 @@
 @extends('layouts.login')
-@section('title', 'Profile - Employer')
+@section('title', 'Profile - Employee')
 
 {{-- for sending email --}}
 @section('links-in-head')
