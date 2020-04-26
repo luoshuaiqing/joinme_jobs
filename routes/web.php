@@ -26,3 +26,12 @@ Route::get('/profile', 'profileController@show_profile')->name('profile')->middl
 Route::post('/profile', 'profileController@edit_profile');
 
 Route::get('/logout', 'profileController@logout')->middleware(['checkLogin']);
+
+Route::get('/post_job', 'jobController@show')->middleware(['checkLoginEmployer']);
+Route::post('/post_job', 'jobController@postJob')->middleware(['checkLoginEmployer']);
+Route::get('/posted_jobs', 'jobController@showPostedJobs')->name('posted_jobs')->middleware(['checkLoginEmployer']);
+Route::get('/posted_jobs/{job}', 'jobController@showEditPostedJob')->name('edit_posted_job')->middleware(['checkLoginEmployer']);
+Route::post('/edit_posted_job/{job}', 'jobController@editPostedJob')->middleware(['checkLoginEmployer']);
+
+
+Route::get('/search', 'searchController@show')->name('search')->middleware(['checkLogin']);

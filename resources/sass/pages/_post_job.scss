@@ -1,0 +1,45 @@
+.post-job-container {
+    position: relative;
+    height: $height-body;
+    padding-top: 3rem;
+
+
+
+    label {
+        font-size: 1.4rem;
+
+    }
+
+    input, textarea {
+        font-size: 1.6rem;
+    }
+
+    button.add {
+        margin-left: .5rem;
+        font-size: 1.6rem;
+        visibility: hidden;
+    }
+
+    small {
+        font-size: 1.2rem;
+        display: block;
+    }
+
+    .add-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.posted-jobs-container {
+    position: relative;
+    height: $height-body;
+    padding-top: 3rem;
+
+    table {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+
+}

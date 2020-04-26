@@ -53,14 +53,16 @@
         <div class="nav-box--left">
             <a href="/" class="@yield('nav-home')" >Home</a>
             <a href="/search" class="@yield('nav-search')" >Search</a>
-            <a href="/about" class="@yield('nav-about')">About</a>
         </div>
         <div class="nav-box--center">
             <span>JoinMe</span>
-            <img src="{{asset('img/JoinMe.png')}}" alt="JoinMe Logo">
+            <img src="{{asset('images/JoinMe.png')}}" alt="JoinMe Logo">
         </div>
         <div class="nav-box--right">
-            <button id="menu" class="btn">Menu</button>
+            <div>
+                <a href="/about" class="@yield('nav-about')" id="about">About</a>
+                <button id="menu" class="btn">Menu</button>
+            </div>
         </div>
 
     </nav>

@@ -16,9 +16,18 @@ class profileController extends Controller
 
         $user = Auth::user();
 
-        return view('profile', [
-            'user' => $user
-        ]);
+        if($user->is_employee) {
+            return view('profile.profile_employee', [
+                'user' => $user
+            ]);
+        }
+        else {
+            return view('profile.profile_employer', [
+                'user' => $user
+            ]);
+        }
+
+
     }
 
     // todo: post method for edit profile, make sure keep old input if anything goes wrong, and check for image upload

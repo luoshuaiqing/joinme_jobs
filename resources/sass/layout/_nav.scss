@@ -7,6 +7,13 @@
     justify-content: space-between;
     flex-wrap: nowrap;
 
+    .active {
+        color: black;
+    }
+
+    > * {
+        white-space: nowrap;
+    }
     .nav-box--left {
         margin-left: 2rem;
 
@@ -50,9 +57,10 @@
             > * {
                 margin-right: 2rem;
                 font-size: $font-nav;
+
             }
 
-            #about, #logout {
+            #about, #logout, #profile {
                 @media only screen and (max-width: 40.625em) { //650px
                     display: none;
                 };
@@ -176,6 +184,7 @@
             }
         }
     }
+
 
 
 

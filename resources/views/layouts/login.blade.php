@@ -35,6 +35,7 @@
                     chat page
                 </a>
             </li>
+            @yield('post-job-collapse')
             <li class="nav__item">
                 <a href="/profile">
                     <svg class="nav__icon-profile"><use xlink:href="{{asset('icon/sprite.svg#icon-profile')}}"></use></svg>
@@ -58,17 +59,19 @@
 
     <nav class="nav">
         <div class="nav-box--left">
-            <a href="/search" class="@yield('nav-search') " >Search</a>
-            <a href="/chat" class="@yield('nav-chat') ">Chat</a>
-            <a href="/profile" class="@yield('nav-profile') ">Profile</a>
+            <a href="/search" class="@yield('nav-search')" >Search</a>
+            <a href="/chat" class="@yield('nav-chat')">Chat</a>
+            @yield('post-job')
+
 
         </div>
         <div class="nav-box--center">
             <span>JoinMe</span>
-            <img src="{{asset('img/JoinMe.png')}}" alt="JoinMe Logo">
+            <img src="{{asset('images/JoinMe.png')}}" alt="JoinMe Logo">
         </div>
         <div class="nav-box--right">
             <div>
+                <a href="/profile" class="@yield('nav-profile')" id="profile">Profile</a>
                 <a href="/about" class="@yield('nav-about')" id="about">About</a>
                 <a href="/logout" class="@yield('nav-logout')" id="logout">Log Out</a>
                 <button id="menu" class="btn">Menu</button>

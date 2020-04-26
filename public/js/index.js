@@ -43,7 +43,7 @@ $('.index-container__signup .btn-send').click(() => {
 })
 
 
-$('.submit.submit-signup').click(() => {
+$('.submit.submit-signup').click(function() {
     event.preventDefault();
     $.ajaxSetup({
         headers: {

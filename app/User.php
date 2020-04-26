@@ -12,5 +12,8 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
+    public function jobs() {
+        return $this->hasMany('App\Job');
+    }
 
 }

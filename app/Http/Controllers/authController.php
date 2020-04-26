@@ -77,6 +77,7 @@ class authController extends Controller
         $user = new User();
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
+
         $user->is_employee = $request->input('asEmployee');
         $user->save();
 

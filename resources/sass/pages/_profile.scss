@@ -43,12 +43,10 @@
 }
 
 
-.body-profile {
-    // background-image: url("../../../public/img/profile_bg.jpeg");
-    background-image: url("../../../public/img/profile_bg.jpeg");
+.body-profile, .body-post-job,  .body-posted-jobs, .body-edit-posted-job {
+    background-image: url("../../../public/images/profile_bg.jpeg");
     background-repeat: no-repeat;
 	background-size: 100% 100%;
     background-position: 35% 0;
-
 }
 

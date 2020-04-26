@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         // customized middleware
         'checkLogin' => \App\Http\Middleware\CheckLogin::class,
         'checkLogout' => \App\Http\Middleware\CheckLogout::class,
+        'checkLoginEmployer' => \App\Http\Middleware\CheckLoginEmployer::class,
     ];
 }

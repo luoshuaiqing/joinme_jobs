@@ -1,5 +1,5 @@
 @extends('layouts.login')
-@section('title', 'Profile - Employee')
+@section('title', 'Profile - Employer')
 
 {{-- for sending email --}}
 @section('links-in-head')
@@ -8,12 +8,36 @@
 
 @endsection
 
+@section('post-job')
+<a href="/post_job" class="text-muted">Post Job</a>
+<a href="/posted_jobs" class="text-muted">Posted Jobs</a>
+@endsection
+
+@section('post-job-collapse')
+<li class="nav__item">
+    <a href="/post_job">
+        <svg class="nav__icon-post-job">
+            <use xlink:href="{{asset('icon/sprite.svg#icon-pencil')}}"></use>
+        </svg>
+        post job page
+    </a>
+</li>
+<li class="nav__item">
+    <a href="/posted_jobs">
+        <svg class="nav__icon-posted-jobs">
+            <use xlink:href="{{asset('icon/sprite.svg#icon-office')}}"></use>
+        </svg>
+        posted jobs
+    </a>
+</li>
+@endsection
+
+
 @section('nav-search', 'text-muted')
 @section('nav-chat', 'text-muted')
 @section('nav-profile', 'active')
 @section('nav-about', 'text-muted')
 @section('nav-logout', 'text-muted')
-
 @section('body-class', 'body-profile')
 
 @section('content')
