@@ -17,8 +17,6 @@ Route::get('/', function () {
     return view('index');
 })->name('index')->middleware(['checkLogout']);
 
-Route::get('/test', 'authController@test');
-
 Route::post('/login', 'authController@login');
 Route::post('/signup', 'authController@signup');
 
@@ -51,3 +49,5 @@ Route::get('/about', function() {
 
 
 
+Route::get('/test_client', 'authController@testClient');
+Route::get('/test_server', 'authController@testServer');
