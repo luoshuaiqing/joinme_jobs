@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Broadcast;
 
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels

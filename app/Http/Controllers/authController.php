@@ -9,7 +9,7 @@ use Hash;
 use App\Rules\NotExistEmail;
 use Illuminate\Validation\Rule;
 use App\User;
-use App\MyEvent;
+use App\NewMessage;
 
 class authController extends Controller
 {
@@ -100,6 +100,6 @@ class authController extends Controller
     }
 
     public function testServer() {
-        event(new MyEvent('hello world'));
+        event(new NewMessage('hello world'));
     }
 }

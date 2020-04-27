@@ -41,7 +41,8 @@
 
 
 @section('content')
-<div class="posted-jobs-container container">
+<form class="posted-jobs-container container" action="#" method="post">
+    @csrf
     @if(session('success'))
         <h3 class="text-success mt-5">{{session('success')}}</h3>
     @endif
@@ -58,6 +59,7 @@
                 <th scope="col">State</th>
                 <th scope="col">Country</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -73,10 +75,22 @@
                     <td>{{$postedJob->state}}</td>
                     <td>{{$postedJob->country}}</td>
                     <td><a href="/posted_jobs/{{$postedJob->id}}" class="btn btn-primary btn-lg">Edit</a></td>
+                    <td><button class="btn btn-danger btn-lg btn-delete" type="submit" data-job-id="{{$postedJob->id}}">Delete</button></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-</div>
+</form>
+
+<script>
+    $('.btn-delete').click(function(e) {
+        e.preventDefault();
+        let jobId = $(this).attr('data-job-id');
+        $('form').attr('action', '/delete_posted_job/' + jobId);
+        $('form').submit();
+    })
+
+
+</script>
 @endsection

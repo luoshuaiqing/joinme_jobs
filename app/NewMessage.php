@@ -8,7 +8,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 
-class MyEvent implements ShouldBroadcast
+class NewMessage implements ShouldBroadcast
 {
   use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -21,12 +21,12 @@ class MyEvent implements ShouldBroadcast
 
   public function broadcastOn()
   {
-      return ['my-channel'];
+      return ['chatting-channel'];
   }
 
   public function broadcastAs()
   {
-      return 'my-event';
+      return 'new-message';
   }
 
 }

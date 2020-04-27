@@ -30,6 +30,7 @@ Route::post('/post_job', 'jobController@postJob')->middleware(['checkLoginEmploy
 Route::get('/posted_jobs', 'jobController@showPostedJobs')->name('posted_jobs')->middleware(['checkLoginEmployer']);
 Route::get('/posted_jobs/{job}', 'jobController@showEditPostedJob')->name('edit_posted_job')->middleware(['checkLoginEmployer']);
 Route::post('/edit_posted_job/{job}', 'jobController@editPostedJob')->middleware(['checkLoginEmployer']);
+Route::post('/delete_posted_job/{job}', 'jobController@deletePostedJob')->middleware(['checkLoginEmployer']);
 
 
 Route::get('/search', 'searchController@show')->name('search')->middleware(['checkLogin']);

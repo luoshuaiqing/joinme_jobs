@@ -232,7 +232,13 @@ class jobController extends Controller
         return redirect()->route("edit_posted_job", $job->id)->with([
             'success' => 'The job is successfully updated!'
         ]);
+    }
 
+    public function deletePostedJob(Request $request, Job $job) {
+        $job->delete();
+        return redirect()->route('posted_jobs')->with([
+            'success' => 'Successfully deleted the job!'
+        ]);
     }
 
 }
