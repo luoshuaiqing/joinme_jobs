@@ -49,6 +49,13 @@ Route::get('/about', function() {
 });
 
 
+// chatting
+Route::get('/messages', 'chatController@show')->name('chatroom')->middleware(['checkLogin']);
+Route::post('/messages', 'chatController@sendMessage')->middleware(['checkLogin']);
+Route::get('/detailedMessages/{otherUserId}', 'chatController@getMessages')->middleware(['checkLogin']);
+Route::get('/messages/{job}', 'chatController@showChat')->middleware(['checkLogin']);
+
 
 Route::get('/test_client', 'authController@testClient');
 Route::get('/test_server', 'authController@testServer');
+Route::get('/test', 'testController@test');

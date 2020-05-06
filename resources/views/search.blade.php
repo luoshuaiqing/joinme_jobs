@@ -203,7 +203,7 @@
 
     let start_chat = () => {
         event.preventDefault();
-        window.location.href = "chatroom.php?change_room_job_id=" + clicked_job_id;
+        window.location.href = "messages/" + clicked_job_id;
     }
 
     function search_helper(to_clear = true) {
@@ -284,10 +284,10 @@
             '</span>, <span class="text-capitalize">' + state + '</span></p>';
 
         let str_3 =
-            '<div class="description_2"><p class="margin_bottom_25"><span id="div_1">Job Description</span><br/><span>' +
+            '<div class="description_2"><p class="margin_bottom_25"><span id="div_1" class="header-2">Job Description</span><span>' +
             job_description + '</span></p>';
 
-        let str_4 = '<span id="div_2">Here\'s What You\'ll Do</span><ul class=" margin_bottom_25">';
+        let str_4 = '<span id="div_2" class="header-2">Here\'s What You\'ll Do</span><ul class=" margin_bottom_25">';
 
         let str_5 = '';
         responsibilities.forEach((responsibility) => {
@@ -298,7 +298,7 @@
         str_5 += '</ul>';
 
         let str_6 =
-            '<span id="div_3">Here\'s What We Are Looking For</span><ul class=" margin_bottom_25">';
+            '<span id="div_3" class="header-2">Here\'s What We Are Looking For</span><ul class=" margin_bottom_25">';
         let str_7 = '';
         requirements.forEach((requirement) => {
             if (requirement && requirement.trim().length > 0) {
@@ -309,7 +309,7 @@
         str_7 += '</ul>';
 
 
-        let str_8 = '<p class=""><span id="div_4">About Us</span><br/> <span>' + company_description +
+        let str_8 = '<p class=""><span id="div_4" class="header-2">About Us</span> <span>' + company_description +
             '</span></p>';
 
         let str_9 = '<div class="button_div "><a href="' + application_website +

@@ -1,5 +1,5 @@
 @extends('layouts.login')
-@section('title', 'Post Job')
+@section('title', 'Post a New Job')
 
 {{-- for sending email --}}
 @section('links-in-head')
@@ -93,8 +93,7 @@
             <div class="col-12 form-group ">
                 <label for="job_description">Job Description</label>
                 <textarea class="form-control form-control-lg" id="job_description" name="job_description" rows="3"
-                    aria-describedby="job_description_word_limit" required>{{old('job_description')}}
-                </textarea>
+                    aria-describedby="job_description_word_limit" required>{{old('job_description')}}</textarea>
                 <small id="job_description_word_limit" class="form-text text-muted">
                     You can not have more than 5000 characters in job description.
                 </small>
@@ -164,8 +163,7 @@
             <div class="col-12 form-group">
                 <label for="company_description">Company Description</label>
                 <textarea class="form-control form-control-lg" id="company_description" rows="3"
-                    aria-describedby="company_description_word_limit"  name="company_description" required>{{old('company_description')}}
-                </textarea>
+                    aria-describedby="company_description_word_limit"  name="company_description" required>{{old('company_description')}}</textarea>
                 <small id="company_description_word_limit" class="form-text text-muted">
                     You can not have more than 5000 characters in company description.
                 </small>

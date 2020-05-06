@@ -1,5 +1,5 @@
 @extends('layouts.login')
-@section('title', 'Edit Posted Job')
+@section('title', 'Edit Posted Job - ' . $job->job_title)
 
 {{-- for sending email --}}
 @section('links-in-head')

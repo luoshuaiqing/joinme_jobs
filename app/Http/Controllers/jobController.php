@@ -18,23 +18,19 @@ class jobController extends Controller
     public function postJob(Request $request) {
         $request->validate([
             'job_title' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'job_department' => [
                 'required'
             ],
             'city' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'state' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'country' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'job_description' => [
                 'required',
@@ -140,23 +136,19 @@ class jobController extends Controller
     public function editPostedJob(Request $request, Job $job) {
         $request->validate([
             'job_title' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'job_department' => [
                 'required'
             ],
             'city' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'state' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'country' => [
-                'required',
-                'alpha'
+                'required'
             ],
             'job_description' => [
                 'required',

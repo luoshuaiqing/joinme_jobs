@@ -11016,10 +11016,6 @@ body {
   color: black;
 }
 
-.nav > * {
-  white-space: nowrap;
-}
-
 .nav .nav-box--left {
   margin-left: 2rem;
 }
@@ -11473,6 +11469,10 @@ body {
   padding-top: 3rem;
 }
 
+.post-job-container textarea {
+  background-color: #fff !important;
+}
+
 .post-job-container label {
   font-size: 1.4rem;
 }
@@ -11508,6 +11508,12 @@ body {
 .posted-jobs-container table {
   font-size: 1.6rem;
   margin-top: 2rem;
+}
+
+.header-2 {
+  font-size: 2.2rem;
+  margin-top: 3rem !important;
+  display: block;
 }
 
 .search_div {
@@ -11699,9 +11705,310 @@ ul li {
   margin-right: auto;
 }
 
+.button_div button,
+.button_div a {
+  font-size: 2rem !important;
+}
+
 @media screen and (max-width: 768px) {
   .active-cyan-4 {
     top: 15%;
   }
+}
+
+.m-header-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.m-left-container,
+.m-right-container {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.user-photo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.user-photo-self {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+
+.message-user-name {
+  display: flex;
+  margin-bottom: 0 !important;
+  align-items: center;
+}
+
+.search-messages-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-messages-container .search-messages {
+  width: 100%;
+  border: 1px solid #9a9a9a;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: 1px solid grey;
+  padding: 0.5rem 4rem;
+  border-radius: 5px;
+}
+
+.search-messages-container svg {
+  position: absolute;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  fill: grey;
+  z-index: 1000;
+}
+
+/* width */
+
+.messages-table-left {
+  display: block;
+  max-height: 75vh;
+  min-height: 75vh;
+  overflow: scroll;
+  margin-bottom: 0 !important;
+  border: 1px solid black;
+}
+
+.messages-table-left tbody {
+  display: block;
+  width: 100%;
+}
+
+.messages-table-left tbody tr {
+  display: block;
+  width: 100%;
+}
+
+.messages-table-left tbody tr td {
+  display: block;
+  border-left: 1px solid #9a9a9a;
+}
+
+.messages-table-left tbody tr td.unread {
+  border-left: 0.5rem solid #ffc077 !important;
+}
+
+.messages-table-left tbody tr:hover {
+  cursor: pointer;
+}
+
+.messages-table-left tbody tr:first-child td {
+  border-top: none !important;
+}
+
+.messages-table-left tbody tr:last-child td {
+  border-bottom: 1px solid #9a9a9a !important;
+}
+
+.messages-table-left-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 1.5rem;
+}
+
+.messages-table-left-top .name {
+  margin-right: 0.3rem;
+}
+
+.messages-table-left-top * {
+  border: none !important;
+}
+
+.messages-table-left .time {
+  display: block;
+  text-align: right;
+}
+
+.m-right-container {
+  width: 100%;
+  border: 1px solid #9a9a9a;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-right-container .header {
+  display: flex;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.m-right-container .header img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.m-right-container .header img:hover {
+  cursor: pointer;
+}
+
+.m-right-container .message-alert {
+  margin-top: 1rem;
+  background-color: rgba(44, 134, 196, 0.25);
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+.m-right-container .message-alert--post-content {
+  margin-right: auto;
+}
+
+.m-right-container .message-alert--post button:last-child {
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.m-right-container .message-alert--post > :first-child {
+  margin-right: 1rem;
+  white-space: nowrap;
+}
+
+.m-right-container .message-alert--post > :first-child * {
+  margin-bottom: 0;
+}
+
+.m-right-container .message-alert--post > :first-child > :first-child {
+  font-weight: 600;
+}
+
+.m-right-container .message-alert--request {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.m-right-container .message-alert--request > div {
+  margin-right: 0.5rem;
+}
+
+.m-right-container .message-alert--request > div > * {
+  display: block;
+  white-space: nowrap;
+}
+
+.m-right-container .message-alert--request > div > span:first-child {
+  font-size: 1.2rem;
+  color: #9a9a9a;
+}
+
+.m-right-container .message-alert--request > div > span:last-child {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.m-right-container .message-alert--request .btn-container {
+  display: flex;
+}
+
+.m-right-container .message-alert--request .btn-container button {
+  font-size: 1.4rem;
+}
+
+.messages-container {
+  margin-top: 1rem;
+  flex: 1;
+  overflow: scroll;
+  max-height: -webkit-fill-available;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.messages-container .message-other,
+.messages-container .message-self {
+  width: 45%;
+  position: relative;
+}
+
+.messages-container .message-other-container,
+.messages-container .message-self-container {
+  display: flex;
+}
+
+.messages-container .message-other-container .time,
+.messages-container .message-self-container .time {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #9a9a9a;
+}
+
+.messages-container .message-self-container {
+  flex-direction: row-reverse;
+}
+
+.messages-container .message-other,
+.messages-container .message-self {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.messages-container .message-other:not(:last-child),
+.messages-container .message-self:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.messages-container .message-other {
+  background-color: #c4c4c4;
+}
+
+.messages-container .message-self {
+  background-color: #a3a3a3;
+}
+
+.message-input-container {
+  margin-top: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message-input-container .message-input {
+  width: 95%;
+  border: 1px solid #9a9a9a;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  border: 1px solid grey;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: inline;
+  margin-right: 1rem;
+}
+
+.message-input-container .message-input + button {
+  width: 5%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2c86c4 !important;
+  border: none !important;
+  background-color: transparent !important;
+  outline: none;
 }
 

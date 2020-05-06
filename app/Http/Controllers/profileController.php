@@ -48,7 +48,7 @@ class profileController extends Controller
                     Rule::in(['Male', 'Female', 'male', 'female'])
                 ],
                 'interestedCareer' => [
-                    'alpha'
+
                 ],
                 'imageUpload' => [
                     'file',

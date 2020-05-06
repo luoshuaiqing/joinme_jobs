@@ -55,7 +55,7 @@
         <div class="header-container">
             <h1>Edit Profile</h1>
 
-            <button class="btn btn-lg btn-outline-primary btn-cancel">Cancel</button>
+            <button class="btn btn-lg btn-outline-primary btn-cancel" type="button">Cancel</button>
             <button class="btn btn-lg btn-primary">Save</button>
         </div>
 

@@ -3,7 +3,9 @@
     height: $height-body;
     padding-top: 3rem;
 
-
+    textarea {
+        background-color: #fff !important;
+    }
 
     label {
         font-size: 1.4rem;

@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li class="nav__item">
-                <a href="/chat">
+                <a href="/messages">
                     <svg class="nav__icon-chat"><use xlink:href="{{asset('icon/sprite.svg#icon-bubbles')}}"></use></svg>
                     chat page
                 </a>
@@ -61,7 +61,7 @@
     <nav class="nav">
         <div class="nav-box--left">
             <a href="/search" class="@yield('nav-search')" >Search</a>
-            <a href="/chat" class="@yield('nav-chat')">Chat</a>
+            <a href="/messages" class="@yield('nav-chat')">Chat</a>
             @yield('post-job')
 
 
