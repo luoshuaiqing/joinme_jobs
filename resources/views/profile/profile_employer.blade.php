@@ -17,7 +17,7 @@
 <li class="nav__item">
     <a href="/post_job">
         <svg class="nav__icon-post-job">
-            <use xlink:href="{{asset('icon/sprite.svg#icon-pencil')}}"></use>
+            <use xlink:href="{{secure_asset('icon/sprite.svg#icon-pencil')}}"></use>
         </svg>
         post job page
     </a>
@@ -25,7 +25,7 @@
 <li class="nav__item">
     <a href="/posted_jobs">
         <svg class="nav__icon-posted-jobs">
-            <use xlink:href="{{asset('icon/sprite.svg#icon-office')}}"></use>
+            <use xlink:href="{{secure_asset('icon/sprite.svg#icon-office')}}"></use>
         </svg>
         posted jobs
     </a>
@@ -47,7 +47,7 @@
     @if(session('success'))
         <h3 class="text-success mt-5">{{session('success')}}</h3>
     @endif
-    <img src="{{asset("user_photos/{$user->img_url}")}}" alt="user profile photo" class="user-photo">
+    <img src="{{secure_asset("user_photos/{$user->img_url}")}}" alt="user profile photo" class="user-photo">
 
     <form action="/profile" method="POST" class="container-fluid edit-profile-container" enctype="multipart/form-data">
         @csrf
@@ -106,6 +106,6 @@
 @section('js')
 
 
-<script src="{{asset('js/profile.js')}}"></script>
+<script src="{{secure_asset('js/profile.js')}}"></script>
 
 @endsection

@@ -22,7 +22,7 @@
     @if(session('success'))
         <h3 class="text-success mt-5">{{session('success')}}</h3>
     @endif
-    <img src="{{asset("user_photos/{$user->img_url}")}}" alt="user profile photo" class="user-photo">
+    <img src="{{secure_asset("user_photos/{$user->img_url}")}}" alt="user profile photo" class="user-photo">
 
     <form action="/profile" method="POST" class="container-fluid edit-profile-container" enctype="multipart/form-data">
         @csrf
@@ -81,6 +81,6 @@
 @section('js')
 
 
-<script src="{{asset('js/profile.js')}}"></script>
+<script src="{{secure_asset('js/profile.js')}}"></script>
 
 @endsection

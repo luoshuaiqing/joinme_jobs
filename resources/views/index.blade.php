@@ -17,7 +17,7 @@
 
     <div class="bg-video">
         <video class="bg-video__content" autoplay muted loop>
-			<source src="{{asset('video/video1.mp4')}}" type="video/mp4">
+			<source src="{{secure_asset('video/video1.mp4')}}" type="video/mp4">
             Your browser is not supported!
         </video>
     </div>
@@ -110,6 +110,6 @@
 
 
 @section('js')
-<script src="{{asset('js/index.js')}}"></script>
+<script src="{{secure_asset('js/index.js')}}"></script>
 
 @endsection

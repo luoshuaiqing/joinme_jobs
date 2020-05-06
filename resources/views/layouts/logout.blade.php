@@ -12,7 +12,7 @@
 
 
     <!-- my css for all pages, including bootstrap -->
-    <link rel="stylesheet" href="{{asset('css/main.css')}}" />
+    <link rel="stylesheet" href="{{secure_asset('css/main.css')}}" />
 
 
 	@yield('links-in-head')
@@ -24,18 +24,18 @@
     <div class="nav-overlay "></div>
     <nav class="nav-collapse">
         <div class="nav-collapse-toggler">
-            <svg class="nav__icon-cross"><use xlink:href="{{asset('icon/sprite.svg#icon-cross')}}"></use></svg>
+            <svg class="nav__icon-cross"><use xlink:href="{{secure_asset('icon/sprite.svg#icon-cross')}}"></use></svg>
         </div>
         <ul class="nav__list">
             <li class="nav__item">
                 <a href="/">
-                    <svg class="nav__icon-home"><use xlink:href="{{asset('icon/sprite.svg#icon-home')}}"></use></svg>
+                    <svg class="nav__icon-home"><use xlink:href="{{secure_asset('icon/sprite.svg#icon-home')}}"></use></svg>
                     home page
                 </a>
             </li>
             <li class="nav__item">
                 <a href="/about">
-                    <svg class="nav__icon-about"><use xlink:href="{{asset('icon/sprite.svg#icon-users')}}"></use></svg>
+                    <svg class="nav__icon-about"><use xlink:href="{{secure_asset('icon/sprite.svg#icon-users')}}"></use></svg>
                     about page
                 </a>
             </li>
@@ -49,7 +49,7 @@
         </div>
         <div class="nav-box--center">
             <span>JoinMe</span>
-            <img src="{{asset('images/JoinMe.png')}}" alt="JoinMe Logo">
+            <img src="{{secure_asset('images/JoinMe.png')}}" alt="JoinMe Logo">
         </div>
         <div class="nav-box--right">
             <div>
@@ -65,7 +65,7 @@
 
     @yield('js')
     {{-- my js for bootstrap --}}
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{secure_asset('js/app.js')}}"></script>
 
     <script>
 

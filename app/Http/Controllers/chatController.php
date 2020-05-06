@@ -101,8 +101,8 @@ class chatController extends Controller
             'to' => $to,
             'msg' => $message,
             'time' => $data->created_at,
-            'img_url_sender' => asset("user_photos/" . User::find($from)->img_url),
-            'img_url_receiver' => asset("user_photos/" . User::find($to)->img_url)
+            'img_url_sender' => secure_asset("user_photos/" . User::find($from)->img_url),
+            'img_url_receiver' => secure_asset("user_photos/" . User::find($to)->img_url)
         ];
 
         event(new NewMessage($msg));

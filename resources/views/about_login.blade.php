@@ -20,7 +20,7 @@
     <li class="nav__item">
         <a href="/post_job">
             <svg class="nav__icon-post-job">
-                <use xlink:href="{{asset('icon/sprite.svg#icon-pencil')}}"></use>
+                <use xlink:href="{{secure_asset('icon/sprite.svg#icon-pencil')}}"></use>
             </svg>
             post job page
         </a>
@@ -28,7 +28,7 @@
     <li class="nav__item">
         <a href="/posted_jobs">
             <svg class="nav__icon-posted-jobs">
-                <use xlink:href="{{asset('icon/sprite.svg#icon-office')}}"></use>
+                <use xlink:href="{{secure_asset('icon/sprite.svg#icon-office')}}"></use>
             </svg>
             posted jobs
         </a>
