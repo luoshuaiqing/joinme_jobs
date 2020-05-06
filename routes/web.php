@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('index');
 })->name('index')->middleware(['checkLogout']);
 
-Route::post('/login', 'authController@login');
-Route::post('/signup', 'authController@signup');
+Route::post('/login', 'authController@login')->middleware(['checkLogout']);
+Route::post('/signup', 'authController@signup')->middleware(['checkLogout']);
 
 Route::get('/profile', 'profileController@show_profile')->name('profile')->middleware(['checkLogin']);
-Route::post('/profile', 'profileController@edit_profile');
+Route::post('/profile', 'profileController@edit_profile')->middleware(['checkLogin']);
 
 Route::get('/logout', 'profileController@logout')->middleware(['checkLogin']);
 
@@ -55,7 +55,3 @@ Route::post('/messages', 'chatController@sendMessage')->middleware(['checkLogin'
 Route::get('/detailedMessages/{otherUserId}', 'chatController@getMessages')->middleware(['checkLogin']);
 Route::get('/messages/{job}', 'chatController@showChat')->middleware(['checkLogin']);
 
-
-Route::get('/test_client', 'authController@testClient');
-Route::get('/test_server', 'authController@testServer');
-Route::get('/test', 'testController@test');
