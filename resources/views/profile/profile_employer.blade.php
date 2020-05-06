@@ -21,6 +21,7 @@
         </svg>
         post job page
     </a>
+
 </li>
 <li class="nav__item">
     <a href="/posted_jobs">
