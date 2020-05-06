@@ -1,5 +1,5 @@
 <div class="header">
-    <img src="{{secure_asset("user_photos/{$otherUser->img_url}")}}" alt="the other user's photo">
+    <img src="{{asset("user_photos/{$otherUser->img_url}")}}" alt="the other user's photo">
     <h4 class="message-user-name">{{$otherUser->first_name}} {{$otherUser->last_name}}</h4>
 </div>
 
@@ -8,7 +8,7 @@
     @foreach ($messages as $message)
         @if($message->from == $user->id)
         <div class="message-self-container">
-            <img src="{{secure_asset("user_photos/{$user->img_url}")}}" alt="the other user's photo" class="user-photo-self">
+            <img src="{{asset("user_photos/{$user->img_url}")}}" alt="the other user's photo" class="user-photo-self">
             <div class="message-self">
                 {{$message->message}}
             </div>
@@ -19,7 +19,7 @@
 
         @else
         <div class="message-other-container">
-            <img src="{{secure_asset("user_photos/{$otherUser->img_url}")}}" alt="the other user's photo" class="user-photo">
+            <img src="{{asset("user_photos/{$otherUser->img_url}")}}" alt="the other user's photo" class="user-photo">
             <div class="message-other">
                 {{$message->message}}
             </div>

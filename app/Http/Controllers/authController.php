@@ -50,6 +50,7 @@ class authController extends Controller
     // the verification code will always be joinmenow
     public function signup(Request $request) {
         $verificationCode = 'joinmenow';
+
         $request->validate([
             'email' => [
                 'required',

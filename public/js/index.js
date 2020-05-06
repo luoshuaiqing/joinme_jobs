@@ -38,7 +38,7 @@ $('.index-toggle-display').click((e) => {
 });
 
 $('.index-container__signup .btn-send').click(() => {
-    alert('email sent');
+    alert('I did not implement the verification code functionality, because my server was not running when I submit my homework. Please just assume you received an email with verification code joinmenow');
     alert('the verification code is \'joinmenow\'');
 })
 

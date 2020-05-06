@@ -19,7 +19,7 @@
     <li class="nav__item">
         <a href="/post_job">
             <svg class="nav__icon-post-job">
-                <use xlink:href="{{secure_asset('icon/sprite.svg#icon-pencil')}}"></use>
+                <use xlink:href="{{asset('icon/sprite.svg#icon-pencil')}}"></use>
             </svg>
             post job page
         </a>
@@ -27,7 +27,7 @@
     <li class="nav__item">
         <a href="/posted_jobs">
             <svg class="nav__icon-posted-jobs">
-                <use xlink:href="{{secure_asset('icon/sprite.svg#icon-office')}}"></use>
+                <use xlink:href="{{asset('icon/sprite.svg#icon-office')}}"></use>
             </svg>
             posted jobs
         </a>
@@ -64,7 +64,7 @@
         <div class="col-md-4 col-12 left_col" id="left_col">
 
             <!-- <div class="job_box">
-                <span class="job_title "><img class="logo" src="secure_assets/company_images/amazon.png">&nbsp;<span class="clickable text_center" onclick="show_detail(this);">Software Engineer</span></span>
+                <span class="job_title "><img class="logo" src="assets/company_images/amazon.png">&nbsp;<span class="clickable text_center" onclick="show_detail(this);">Software Engineer</span></span>
                 <i class="far fa-star fa-lg fav" ></i>
 
                 <p class=""><i class="far fa-building"></i>&nbsp;<span>Amazon</span><i class="fas fa-map-marker-alt location_icon"></i>&nbsp;<span>San Diego</span>, <span>CA</span></p>
@@ -249,7 +249,7 @@
                 let job_description = result.job_description;
                 let state = result.state;
                 let job_id = result.id;
-                let image_url = "{{secure_asset("user_photos")}}" + "/" + result.img_url;
+                let image_url = "{{asset("user_photos")}}" + "/" + result.img_url;
 
                 resultsList.append('<div class="job_box" id="_' + job_id +
                     '"><span class="job_title  "><img class="logo" alt="xxx" src="' +
